@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.addition";
+option java_outer_classname = "AdditionProto";
+option objc_class_prefix = "HLW";
+
+package addition;
+
+service Add {
+    rpc Addition (AdditionRequest) returns (AdditionReply) {}
+}
+
+message AdditionRequest {
+    float first = 1;
+    float second = 2;
+}
+
+message AdditionReply {
+    float sum = 1;
+}
